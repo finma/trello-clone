@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export type FieldErrors<T> = {
-  [K in keyof T]?: string;
+  [K in keyof T]?: string[];
 };
 
 export type ActionState<TInput, TOutput> = {
@@ -20,7 +20,7 @@ export const createSafeAction = <TInput, TOutput>(
     if (!validationResult.success) {
       return {
         fieldErrors: validationResult.error.flatten()
-          .formErrors as FieldErrors<TInput>,
+          .fieldErrors as FieldErrors<TInput>,
       };
     }
 
