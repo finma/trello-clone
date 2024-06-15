@@ -22,19 +22,22 @@ interface FormInputProps {
 }
 
 export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
-  ({
-    id,
-    label,
-    type,
-    placeholder,
-    required,
-    disabled,
-    errors,
-    className,
-    defaultValue = "",
-    onBlur,
-    ...props
-  }) => {
+  (
+    {
+      id,
+      label,
+      type,
+      placeholder,
+      required,
+      disabled,
+      errors,
+      className,
+      defaultValue = "",
+      onBlur,
+      ...props
+    },
+    ref
+  ) => {
     const { pending } = useFormStatus();
 
     return (
