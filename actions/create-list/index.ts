@@ -59,7 +59,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-      error: "Failed to update board",
+      error: "Failed to create list",
     };
   }
 
