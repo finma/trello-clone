@@ -54,6 +54,7 @@ export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
           <Input
             id={id}
             name={id}
+            ref={ref}
             type={type}
             placeholder={placeholder}
             disabled={disabled || pending}
