@@ -6,7 +6,7 @@ export type MobileSidebarStore = {
   onClose: () => void;
 };
 
-export const UserMobileSidebar = create<MobileSidebarStore>((set) => ({
+export const UseMobileSidebar = create<MobileSidebarStore>((set) => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
