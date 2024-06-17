@@ -18,7 +18,11 @@ export default clerkMiddleware(
       }
 
       // Check if we're not already on the redirect target
-      if (req.nextUrl.pathname !== path) {
+      if (
+        req.nextUrl.pathname !== path &&
+        !req.nextUrl.pathname.startsWith("/api")
+      ) {
+        // console.log("path", req.nextUrl.pathname, path);
         const orgSelection = new URL(path, req.url);
         return NextResponse.redirect(orgSelection);
       }
