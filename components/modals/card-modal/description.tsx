@@ -50,7 +50,14 @@ export const Description = ({ card }: DescriptionProps) => {
 
   const { execute, fieldErrors } = useAction(updateCard, {
     onSuccess: (data) => {
-      queryClient.invalidateQueries({ queryKey: ["card", card.id] });
+      queryClient.invalidateQueries({
+        queryKey: ["card", card.id],
+      });
+
+      queryClient.invalidateQueries({
+        queryKey: ["card-logs", card.id],
+      });
+
       toast.success(`Card "${data.title}" updated!`);
       disableEditing();
     },
