@@ -63,3 +63,5 @@ npx prisma db push
 ```
 npm run dev
 ```
+
+The app is now running, navigate to http://localhost:3000/ in your browser to explore its UI.
