@@ -9,19 +9,19 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model Board {
-  id            String @id @default(uuid())
+  id            String @id @default(uuid()) @map("_id")
   title         String
   orgId         String
   imageId       String
-  imageThumbUrl String @db.Text
-  imageFullUrl  String @db.Text
-  imageUserName String @db.Text
-  imageLinkHTML String @db.Text
+  imageThumbUrl String
+  imageFullUrl  String
+  imageUserName String
+  imageLinkHTML String
 
   list List[]
 
@@ -32,7 +32,7 @@ model Board {
 }
 
 model List {
-  id    String @id @default(uuid())
+  id    String @id @default(uuid()) @map("_id")
   title String
   order Int
 
@@ -49,10 +49,10 @@ model List {
 }
 
 model Card {
-  id          String  @id @default(uuid())
+  id          String  @id @default(uuid()) @map("_id")
   title       String
   order       Int
-  description String? @db.Text
+  description String?
 
   listId String
   list   List   @relation(fields: [listId], references: [id], onDelete: Cascade)
@@ -77,15 +77,15 @@ enum ENTITY_TYPE {
 }
 
 model AuditLog {
-  id          String      @id @default(uuid())
+  id          String      @id @default(uuid()) @map("_id")
   orgId       String
   action      ACTION
   entityId    String
   entityType  ENTITY_TYPE
   entityTitle String
   userId      String
-  userImage   String      @db.Text
-  userName    String      @db.Text
+  userImage   String
+  userName    String
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -94,7 +94,7 @@ model AuditLog {
 }
 
 model OrgLimit {
-  id    String @id @default(uuid())
+  id    String @id @default(uuid()) @map("_id")
   orgId String @unique
   count Int    @default(0)
 
@@ -105,7 +105,7 @@ model OrgLimit {
 }
 
 model OrgSubscription {
-  id    String @id @default(uuid())
+  id    String @id @default(uuid()) @map("_id")
   orgId String @unique
 
   stripeCustomerId       String?   @unique @map(name: "string_customer_id")
