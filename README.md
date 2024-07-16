@@ -6,7 +6,7 @@
 
 > Video Demo:
 
-[![Taskify](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FUnobX_RVxE8)](https://youtu.be/UnobX_RVxE8)
+https://github.com/user-attachments/assets/ef80dabb-9425-4698-9b52-7718a3275be9
 
 > Key Features:
 
