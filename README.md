@@ -2,6 +2,8 @@
 
 ## Overview
 
+<img src='./public/taskify-mockup.png' />
+
 > Video Demo:
 
 [![Taskify](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FUnobX_RVxE8)](https://youtu.be/UnobX_RVxE8)
